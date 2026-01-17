@@ -1,0 +1,136 @@
+@use '../../../../GlobalStyle/globalStyle' as *;
+.reg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $bg-color;
+  padding: 20px;
+
+  .reg-form {
+    background: $white;
+    width: 100%;
+    max-width: 800px; // Maximum width for desktop
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    // Grid Layout for Desktop
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr; // Two equal columns
+      gap: 20px;
+      margin-bottom: 20px;
+
+      // Responsive: Stack columns on Tablet/Mobile
+      @include respond-to(tablet) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+
+    fieldset {
+      border: 1px solid #e1e1e1;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      
+      legend {
+        padding: 0 10px;
+        font-weight: bold;
+        color: $primary-color;
+      }
+    }
+
+    input, select {
+      //width: 100%;
+      padding: 12px;
+      border: 1.5px solid #dce1e6;
+      border-radius: 6px;
+      font-size: 16px; // Best for mobile to prevent auto-zoom
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+/* Container for the logo */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Styling the image itself */
+.logo-wrapper img {
+    width: 100vh;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: 10px;
+}
+.input-group {
+  display: flex;
+  flex-direction: column; // लेबल को इनपुट के ऊपर रखने के लिए
+  gap: 5px;
+  width: 100%;
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+    margin-left: 2px;
+  }
+}
+
+.full-width {
+    margin-bottom: 15px;
+}
+
+.dob-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #dce1e6;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+}

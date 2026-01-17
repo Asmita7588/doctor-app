@@ -1,0 +1,15 @@
+// Variables
+$primary-color: #007bff;
+$bg-color: #f4f7f9;
+$white: #ffffff;
+$tablet: 768px;
+$mobile: 480px;
+
+// Mixin for Responsiveness
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: $tablet) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: $mobile) { @content; }
+  }
+}
