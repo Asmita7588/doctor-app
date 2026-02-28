@@ -1,4 +1,6 @@
-@use '../../../../GlobalStyle/globalStyle' as *;
+@use '../../../GlobalStyle/globalStyle' as *;
+
+
 .reg-container {
   display: flex;
   justify-content: center;
@@ -99,7 +101,7 @@
 }
 .input-group {
   display: flex;
-  flex-direction: column; // लेबल को इनपुट के ऊपर रखने के लिए
+  flex-direction: column; 
   gap: 5px;
   width: 100%;
 

@@ -1,0 +1,93 @@
+<!-- <header class="dashboard-header">
+  <div class="header-left">
+     <div class="logo">
+      <img src="assests\dpulselogo.png" alt="Logo">
+    </div>
+    <button class="icon-btn-side" (click)="toggleSidebar()">
+      <i class="fa fa-align-left"></i>
+    </button>
+   
+    <div class="search-container">
+      <i class="fa fa-search"></i>
+      <input type="text" placeholder="Search here...">
+    </div>
+  </div>
+
+  <div class="header-right">
+    <span class="text-link">Notes</span>
+    <span class="text-link">Create</span>
+    
+    <button class="icon-btn">
+      <i class="fa fa-envelope"></i>
+    </button>
+   <button class="icon-btn">
+  <i class="fa-regular fa-bell"></i>
+</button>
+   
+    <button class="icon-btn">
+      <i class="fa fa-arrows-alt"></i>
+    </button>
+
+    <button class="icon-btn logout-btn" (click)="handleAuth()">
+      <i class="fa fa-power-off"></i>
+    </button>
+  </div>
+</header> -->
+
+
+<div class="app-container">
+  
+  <aside class="sidebar" [class.active]="isSidebarOpen()">
+    <div class="sidebar-header">
+         <div class="side-nav-logo">
+          <img src="assests/dpulselogo.png" alt="Logo">
+        </div>
+       <h3>Moli Hospital</h3>
+       <button (click)="toggleSidebar()" class="close-btn">&times;</button>
+    </div>
+    <nav class="sidebar-nav">
+         <a> Hospital</a>
+      <a href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
+      <a href="#"><i class="fa fa-user-md"></i> Doctors</a>
+       <a href="#"><i class="fa fa-calendar"></i> Appoinment</a>
+       <a href="#"><i class="fa fa-th-list"></i> Todo List</a>
+       <a href="#"><i class="fa fa-user-circle"></i> Patients</a>
+      <a href="#"><i class="fa fa-envelope"></i> Email</a>
+    </nav>
+  </aside>
+
+  <div class="sidebar-overlay" *ngIf="isSidebarOpen()" (click)="toggleSidebar()"></div>
+
+  <div class="main-content">
+    
+    <header class="dashboard-header">
+      <div class="header-left">
+        <div class="logo">
+          <img src="assests/dpulselogo.png" alt="Logo">
+        </div>
+        <button class="icon-btn-side" (click)="toggleSidebar()">
+          <i class="fa fa-align-left"></i>
+        </button>
+        <div class="search-container">
+          <i class="fa fa-search"></i>
+          <input type="text" placeholder="Search here...">
+        </div>
+      </div>
+
+      <div class="header-right">
+        <span class="text-link">Notes</span>
+        <span class="text-link">Create</span>
+        <button class="icon-btn"><i class="fa fa-envelope"></i></button>
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+        <button class="icon-btn"><i class="fa fa-arrows-alt"></i></button>
+        <button class="icon-btn logout-btn" (click)="handleAuth()">
+          <i class="fa fa-power-off"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="page-body">
+       <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
